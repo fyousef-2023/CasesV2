@@ -266,7 +266,7 @@ body {
 .field-req { color: var(--red); font-weight: 700; }
 .field-opt { color: #999; font-weight: 600; }
 
-/* ── الشيك ليست (Checklist) — ملاحظة: .cl-block بدل .section لتفادي تعارض مع سويتش التبويبات ── */
+/* ── Check List — ملاحظة: .cl-block بدل .section لتفادي تعارض مع سويتش التبويبات ── */
 .cl-block { background: #fff; border-radius: 12px; border: 0.5px solid #ddd; margin-bottom: 16px; overflow: hidden; }
 .cl-head { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--pur-l); border-bottom: 1px solid #e6dbe6; }
 .cl-icon { font-size: 16px; }
@@ -322,18 +322,17 @@ body {
   <button class="nav-tab" onclick="showTab('create')">فتح تذكرة جديدة</button>
   <button class="nav-tab" onclick="showTab('correct')">الرفع الصحيح والأخطاء الشائعة</button>
   <button class="nav-tab" onclick="showTab('status')">حالات التذكرة</button>
-  <button class="nav-tab" onclick="showTab('checklist')">✅ الشيك ليست</button>
+  <button class="nav-tab" onclick="showTab('checklist')">✅ Check List</button>
   <button class="nav-tab" onclick="showTab('quality')">🎯 الالتزام والجودة</button>
 </div>
 
 <div class="content">
 
-
   <!-- ════════════ TAB: نظرة عامة ════════════ -->
   <div id="overview" class="section active">
 
     <div class="alert info">
-      <strong>الكيس (Case)</strong> هو السجل الرسمي للحالات التي يحتاج حلها تدخل أو متابعة من قسم آخر. فتح التذكرة وتصنيفها الصحيح هو اللي يخلي التصعيد والمتابعة مع القسم المختص ممكنة
+      <strong>الكيس (Case)</strong> هو السجل الرسمي لأي تواصل أو مشكلة أو استفسار من العميل. كل تفاعل مع العميل لازم يوثَّق بتذكرة — التوثيق هو اللي يخلي المتابعة والتصعيد ممكنين.
     </div>
 
     <p class="sec-title">متى يفتح موظف نجاح العملاء تذكرة؟</p>
@@ -341,12 +340,12 @@ body {
       <div class="role-card a">
         <div class="role-num">المسار الأول</div>
         <div class="role-title">بعد التواصل مع العميل</div>
-        <div class="role-desc"> تُفتح تذكرة عندما يحتاج حل موضوع العميل تدخل أو متابعة من قسم آخر — مثل بلاغ دعم فني أو ترقية مبيعات.</div>
+        <div class="role-desc">تُفتح تذكرة عندما يحتاج حل موضوع العميل تدخل أو متابعة من قسم آخر — مثل بلاغ دعم فني أو ترقية مبيعات. وفي حساب العميل تُفتح التذكرة بنفس آلية التصنيف الموضحة.</div>
       </div>
       <div class="role-card b">
         <div class="role-num">المسار الثاني</div>
         <div class="role-title">التعامل مع تذاكر واردة</div>
-        <div class="role-desc">تذاكر تصل لموظف نجاح العملاء - مدير الحساب — دورك هنا هو تحديد حالتها، ومتابعتها حتى الحل.</div>
+        <div class="role-desc">تذاكر تصل جاهزة لموظف نجاح العملاء أو مدير الحساب — دورك هنا هو تصنيفها الصحيح، تحديد حالتها، ومتابعتها حتى الحل.</div>
       </div>
     </div>
 
@@ -371,7 +370,7 @@ body {
   <div id="classify" class="section">
 
     <div class="alert info">
-      كل تذكرة تُصنَّف على <strong>3 مستويات متسلسلة</strong> — كل مستوى يحدد النطاق أكثر، وعلى أساسها يتحدد <strong>الفريق المسؤول (Accountable Team)</strong> عن الحل.
+      كل تذكرة تُصنَّف على <strong>3 مستويات متسلسلة</strong> — كل مستوى يضيق النطاق أكثر، وعلى أساسها يتحدد <strong>الفريق المسؤول (Accountable Team)</strong> عن الحل.
     </div>
 
     <div class="level-flow">
@@ -400,14 +399,14 @@ body {
             <div class="step-num">١</div>
             <div class="step-body">
               <div class="step-title">Inventory Module — المخزون</div>
-              <div class="step-desc">التصنيف الرئيسي: نوع الموديول في المنصة اللي المشكلة متعلقة فيه.</div>
+              <div class="step-desc">التصنيف الرئيسي: نوع الوحدة أو الموديول في المنصة اللي المشكلة متعلقة فيه.</div>
             </div>
           </li>
           <li class="step-item">
             <div class="step-num teal">٢</div>
             <div class="step-body">
               <div class="step-title">Return stock — إرجاع مخزون</div>
-              <div class="step-desc">التصنيف الفرعي: الإجراء المحدد داخل الموديول.</div>
+              <div class="step-desc">التصنيف الفرعي: الإجراء أو الوظيفة المحددة داخل الموديول.</div>
             </div>
           </li>
           <li class="step-item">
@@ -464,28 +463,28 @@ body {
             <div class="step-num teal">١</div>
             <div class="step-body">
               <div class="step-title">Case Origin — مصدر التذكرة</div>
-              <div class="step-desc">من أين وصل الطلب؟ مثال: <strong>Call — اتصال</strong>. اختر المصدر الفعلي دائماً (اتصال، إيميل، محادثات...).</div>
+              <div class="step-desc">من أين وصل الطلب؟ مثال: <strong>Call — اتصال</strong>. اختر المصدر الفعلي دائماً (اتصال، إيميل، إنتركوم...).</div>
             </div>
           </li>
           <li class="step-item">
             <div class="step-num teal">٢</div>
             <div class="step-body">
               <div class="step-title">Case Type — نوع التذكرة</div>
-              <div class="step-desc">مثال: <strong>Inquiry — استفسار</strong>. النوع هو تصنيف التذكرة.</div>
+              <div class="step-desc">مثال: <strong>Inquiry — استفسار</strong>. النوع هو الطبقة الأولى قبل التصنيف الهرمي.</div>
             </div>
           </li>
           <li class="step-item">
             <div class="step-num teal">٣</div>
             <div class="step-body">
               <div class="step-title">Description — الوصف</div>
-              <div class="step-desc">اكتب طلب العميل بوضوح ودقة — مثال: "العميل يحتاج توضيح عن الاسعار". الوصف الجيد يسهّل المتابعة على أي شخص يفتح التذكرة لاحقاً.</div>
+              <div class="step-desc">اكتب طلب العميل بوضوح ودقة — مثال: "العميل يحتاج يوضح استفساري عن السعر". الوصف الجيد يسهّل المتابعة على أي شخص يفتح التذكرة لاحقاً.</div>
             </div>
           </li>
           <li class="step-item">
             <div class="step-num teal">٤</div>
             <div class="step-body">
               <div class="step-title">Subject — الموضوع</div>
-              <div class="step-desc">عنوان مختصر للتذكرة — مثال: "اضافة مستخدم".</div>
+              <div class="step-desc">عنوان مختصر للتذكرة — مثال: "أسئلة مستخدم".</div>
             </div>
           </li>
           <li class="step-item">
@@ -522,9 +521,9 @@ body {
     <div class="card">
       <div class="card-body">
         <div class="info-row"><span class="info-label">Status</span><span class="info-val">يبدأ دائماً بـ <strong>New</strong></span></div>
-        <div class="info-row"><span class="info-label">Case Owner</span><span class="info-val">اسم الموظف المسؤول عن متابعة التذكرة</span></div>
+        <div class="info-row"><span class="info-label">Case Owner</span><span class="info-val">اسم موظف نجاح العملاء الذي فتح التذكرة</span></div>
         <div class="info-row"><span class="info-label">Account Name</span><span class="info-val">اسم حساب العميل التجاري</span></div>
-     
+        <div class="info-row"><span class="info-label">Priority</span><span class="info-val">حسب طبيعة الحالة وتأثيرها على العميل</span></div>
       </div>
     </div>
 
@@ -538,7 +537,7 @@ body {
   <div id="correct" class="section">
 
     <div class="alert success">
-      <strong>تعليمات رفع الكيسات بشكل صحيح</strong>  
+      <strong>تعليمات رفع الكيسات بشكل صحيح</strong> — QA · CSM · رِواء · أبريل ٢٠٢٦. كيس صحيح من البداية يوفّر وقت الجميع.
     </div>
 
     <p class="sec-title">أولاً: خطوات رفع الكيس</p>
@@ -698,18 +697,44 @@ body {
       </div>
     </div>
 
- 
+    <div class="card">
+      <div class="card-head" style="background:var(--purple)">القسم المسؤول عن المتابعة — Department</div>
+      <div class="card-body">
+        <div class="info-row"><span class="info-label">CSM Department</span><span class="info-val">أخطاء ترجع لفريق نجاح العملاء</span></div>
+        <div class="info-row"><span class="info-label">Training Department</span><span class="info-val">أخطاء ترجع لفريق التدريب</span></div>
+      </div>
+    </div>
 
-   
+    <p class="sec-title">مثال من ملف التوثيق</p>
+    <div class="card">
+      <div class="card-body table-scroll">
+        <table class="file-table">
+          <thead><tr><th>Note</th><th>CSM Owner</th><th>Product Onboarding Owner</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>تم إيقاف الكيس عدة مرات بدون داعٍ برغم توضيح كافة التفاصيل التي يطلبها فريق الداتا</td>
+              <td>Amira Kandil</td>
+              <td>Noura Bayoumi / Sara Ibrahim</td>
+            </tr>
+            <tr>
+              <td>تم رفض ملف العميل لأنه PDF، وتم التواصل لتوفير ملف بصيغة XLS ولم يتم التجاوب لأكثر من أسبوعين، وتم تعديل الملف يدوياً — ثم رُفض لعدم توفر سعر البيع رغم طلب العميل الرفع بدونه</td>
+              <td>Zahrah Almurayhil</td>
+              <td>Noura Bayoumi / Ahmed Mousa Baghdadi</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="step-desc" style="margin-top:10px; color:#888; font-size:12px">كل صف في الملف يحتوي أيضاً رابط الكيس على CRM (CRM Link) للرجوع إليه مباشرة.</div>
+      </div>
+    </div>
 
-    <p class="sec-title">  رابعاً : ملف تصنيفات التذاكر</p>
+    <p class="sec-title">رابعاً: ملف تصنيفات التذاكر</p>
     <div class="alert info">
       Tickets Categories (Case Management) — المرجع الكامل لاختيار Case Type وTop Level وSub Level وSecondary Level بشكل صحيح.
       <div><a href="https://docs.google.com/spreadsheets/d/1ehWgFRmtbLnx68rvQSopZ806ISkBHpH9ZkgUF77r8Hw/edit?gid=0#gid=0" target="_blank" class="link-btn purple">📋 فتح ملف التصنيفات</a></div>
     </div>
 
     <div class="alert success" style="margin-bottom:0">
-   كيس صحيح من البداية يوفّر وقت الجميع
+      شكراً على تعاونكم 🙏 — كيس صحيح من البداية يوفّر وقت الجميع.
     </div>
 
   </div>
@@ -721,7 +746,22 @@ body {
       كل تذكرة تمر بحالة واحدة في كل لحظة — الحالة تعكس أين وصلت المعالجة، وهي ما يحدد الإجراء التالي المطلوب منك.
     </div>
 
-   
+    <div class="flow">
+      <span class="flow-node new">New</span>
+      <span class="flow-arrow">←</span>
+      <span class="flow-node cancel">Cancel</span>
+    </div>
+    <div class="flow" style="margin-top:-14px">
+      <span class="flow-node new">New</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node inprog">In Progress</span>
+      <span class="flow-arrow">/</span>
+      <span class="flow-node open">Open</span>
+      <span class="flow-arrow">/</span>
+      <span class="flow-node pending">Pending</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node resolved">Resolved</span>
+    </div>
 
     <div class="card">
       <div class="card-head" style="background:var(--teal)">New — تذكرة جديدة</div>
@@ -773,7 +813,7 @@ body {
             <div class="step-num amber">١</div>
             <div class="step-body">
               <div class="step-title">المحاولة الأولى</div>
-              <div class="step-desc">اتصال بالعميل — إذا لم يرد، تُرسل رسالة نصية.</div>
+              <div class="step-desc">اتصال بالعميل — إذا لم يرد، تُرسل رسالة عبر الإنتركوم.</div>
             </div>
           </li>
           <li class="step-item">
@@ -823,14 +863,11 @@ body {
 
   </div>
 
-</div>
-
-
-  <!-- ════════════ TAB: الشيك ليست ════════════ -->
+  <!-- ════════════ TAB: Check List ════════════ -->
   <div id="checklist" class="section">
 
     <div class="alert info">
-      شيك ليست تفاعلي لأي تعامل مع كيس أو مكالمة — علّم على كل بند أثناء تنفيذه، وفي النهاية اضغط «إعادة تعيين» قبل الكيس الجاي.
+      Check List تفاعلي لأي تعامل مع كيس أو مكالمة — علّم على كل بند أثناء تنفيذه، وفي النهاية اضغط «إعادة تعيين» قبل الكيس الجاي.
     </div>
 
     <!-- الافتتاحية -->
@@ -909,14 +946,14 @@ body {
     </div>
 
     <button class="reset-btn" onclick="resetChecklist()">🔄 إعادة تعيين</button>
-  
+
   </div>
 
   <!-- ════════════ TAB: الالتزام والجودة ════════════ -->
   <div id="quality" class="section">
 
     <div class="alert info">
-      هذي نفس معايير التقييم الرسمية لقسم الجودة عند مراجعة مكالمات التعامل مع الكيسات (Case Handling) — راجعها بعد كل مكالمة للتأكد إنك مغطي كل نقطة.
+      هذي نفس معايير التقييم الرسمية لقسم الجودة عند مراجعة مكالمات التعامل مع الكيسات (Case Handling) — راجعها بعد كل مكالمة للتأكد إنك مغطي كل نقطة، ووزن كل بند هو نفس وزنه في نموذج تقييم الجودة.
     </div>
 
     <div class="cl-block">
@@ -952,7 +989,9 @@ body {
       </div>
     </div>
 
- 
+    <div class="alert warn">
+      <strong>ملاحظة:</strong> هذي المعايير هي نفسها المستخدمة في نموذج CSM Call QA Review — أي بند «No» يؤثر مباشرة على علامة الكيس بمراجعة الجودة.
+    </div>
 
     <button class="reset-btn" onclick="resetQuality()">🔄 إعادة تعيين</button>
 
